@@ -10,12 +10,11 @@ pipeline {
     // NEXUS_CREDS = 'nexus-creds'    // optional
   }
 
-  options {
-    // keep 10 builds
+options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
     timestamps()
-    ansiColor('xterm')
-  }
+}
+
 
   stages {
     stage('Checkout') {
