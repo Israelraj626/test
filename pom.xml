@@ -1,0 +1,16 @@
+stage('Test Results') {
+    steps {
+        dir('my-java-app') {
+            junit '**/target/surefire-reports/*.xml'
+        }
+    }
+}
+
+stage('Archive') {
+    steps {
+        dir('my-java-app') {
+            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+        }
+    }
+}
+
