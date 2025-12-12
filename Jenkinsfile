@@ -31,12 +31,13 @@ options {
         }
       }
     }
+stage('Unit tests & results') {
+    steps {
+        junit testResults: '**/target/surefire-reports/*.xml',
+              allowEmptyResults: true
+    }
+}
 
-    stage('Unit tests & results') {
-      steps {
-        // publish JUnit test reports
-        junit '**/target/surefire-reports/*.xml'
-      }
       post {
         always {
           // collect surefire/coverage artifacts if needed
