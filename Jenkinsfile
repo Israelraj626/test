@@ -42,7 +42,7 @@ pipeline {
 
     post {
         success {
-            echo 'Build successful'
+            echo '🎉 Congrats Candy, your code was successful! 🎉'
         }
         failure {
             echo 'Build failed'
