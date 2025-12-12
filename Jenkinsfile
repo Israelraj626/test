@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     // set names matching Jenkins Global Tool Configuration or use full path
-    JAVA_HOME = tool name: 'jdk11', type: 'jdk'
+    JAVA_HOME = tool name: 'jdk17', type: 'jdk'
     MAVEN_HOME = tool name: 'maven3', type: 'maven'
     // If you need to use GitHub token or Nexus, refer by credentialsId
     GIT_CREDENTIALS = 'github-pat'   // optional: used if you need to push or use APIs
