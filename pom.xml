@@ -12,15 +12,13 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Test Java App</name>
-
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- JUnit for tests -->
+        <!-- JUnit -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -28,10 +26,11 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Spring Boot Web -->
+        <!-- Spring Boot Web (with version added) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.2</version>
         </dependency>
     </dependencies>
 
