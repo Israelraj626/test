@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -48,14 +47,14 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-jar
-          path: '**/target/*.jar'
-          
-- name: Copy JAR to EC2
-  uses: appleboy/scp-action@v0.1.7
-  with:
-    host: ${{ secrets.EC2_HOST }}
-    username: ${{ secrets.EC2_USER }}
-    key: ${{ secrets.EC2_KEY }}
-    source: "target/*.jar"
-    target: "/opt/java-app"
-    strip_components: 1
+          path: 'target/*.jar'
+
+      # ✅ COPY JAR TO EC2 (THIS WAS MISSING PROPER INDENTATION)
+      - name: Copy JAR to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          source: "target/*.jar"
+          target: "/opt/java-app"
