@@ -50,3 +50,16 @@
     </build>
 
 </project>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <mainClass>com.example.TestAppApplication</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
