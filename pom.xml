@@ -22,22 +22,19 @@
         <java.version>17</java.version>
     </properties>
 
-    <!-- ✅ ALL DEPENDENCIES MUST BE INSIDE THIS BLOCK -->
     <dependencies>
-
-        <!-- Web application -->
+        <!-- Web dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Test support (fixes AppTest.java error) -->
+        <!-- Test dependency -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -45,21 +42,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.example.TestAppApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
 
 </project>
-
-<build>
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <mainClass>com.example.TestAppApplication</mainClass>
-            </configuration>
-        </plugin>
-    </plugins>
-</build>
-
