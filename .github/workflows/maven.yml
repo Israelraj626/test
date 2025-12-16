@@ -33,30 +33,21 @@ jobs:
 
       # Build with Maven
       - name: Build with Maven
-        run: mvn clean package 
-
-      # Publish test results
-      - name: Publish JUnit Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: junit-test-results
-          path: '**/target/surefire-reports/*.xml'
+        run: mvn clean package
 
       # Upload JAR artifact
       - name: Upload JAR Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-jar
-          path: 'target/*.jar'
+          path: target/*.jar
 
-      # ✅ COPY JAR TO EC2 (THIS WAS MISSING PROPER INDENTATION)
+      # ✅ COPY JAR TO EC2 (FIXED INDENTATION)
       - name: Copy JAR to EC2
-  uses: appleboy/scp-action@v0.1.7
-  with:
-    host: ${{ secrets.EC2_HOST }}
-    username: ${{ secrets.EC2_USER }}
-    key: ${{ secrets.EC2_KEY }}
-    source: "target/*.jar"
-    target: "/opt/java-app"
-
-        
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+          source: "target/*.jar"
+          target: "/opt/java-app"
