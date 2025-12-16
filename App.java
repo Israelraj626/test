@@ -1,3 +1,10 @@
+@SpringBootApplication
+public class TestAppApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(TestAppApplication.class, args);
+    }
+}
+
 package com.example;
 
 import org.springframework.web.bind.annotation.GetMapping;
